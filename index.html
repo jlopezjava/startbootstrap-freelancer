@@ -24,6 +24,8 @@
   <!-- Custom styles for this template -->
   <link href="css/freelancer.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" type="text/css" href="swagger-ui.css">
+
 </head>
 
 <body id="page-top">
@@ -60,6 +62,11 @@
       <h2 class="font-weight-light mb-0">Web Developer portal - Apis description plattform B2B</h2>
     </div>
   </header>
+
+
+  <!-- Esta linea inicializa swagger -->
+  <script src="swagger-ui-bundle.js"></script>
+  <script src="swagger-ui-standalone-preset.js"></script>
 
   <!-- Portfolio Grid Section -->
   <section class="portfolio" id="portfolio">
@@ -167,28 +174,6 @@
             </a>
         </div>
         <div class="col-md-6 col-lg-4">
-              <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-11">
-                <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                  <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                    <i class="fas fa-search-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img class="img-fluid" src="img/portfolio/ajustes.png" alt="">
-                <h6>Configuration Server</h6>
-              </a>
-        </div>
-        <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-10">
-                <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                    <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                      <i class="fas fa-search-plus fa-3x"></i>
-                    </div>
-                </div>
-              <img class="img-fluid" src="img/portfolio/mapa.png" alt="">
-              <h6>Discovery Server</h6>
-          </a>
-        </div>
-        <div class="col-md-6 col-lg-4">
             <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-12">
             <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
               <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
@@ -244,7 +229,7 @@
       <hr class="star-light mb-5">
       <div class="row">
           <a class="portfolio-item d-block mx-auto" href="#agrandarFoto">
-        <img class="imagenDatos" src="img/portfolio/todo.png" alt="">
+        <img class="imagenDatos" src="img/portfolio/base-de-datos.png" alt="">
       </a>
       </div>
       <div class="text-center mt-4">
@@ -282,7 +267,6 @@
           <div class="col-lg-8 mx-auto">
             <h2 class="text-secondary text-uppercase mb-0">Matching</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="img/portfolio/trabajo.png" >
             <p>The Matching API provides the results of the matching process between offer and demand. 
               Starting with the request from a Client characterized by 2 parameters:
               <ol>
@@ -301,13 +285,29 @@
               </p>
             <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
               <i class="fa fa-close"></i>
-              Swagger</a>
-            <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-              <i class="fa fa-close"></i>
-              Cerrar</a>
+              Api Definition</a>
           </div>
         </div>
       </div>
+      <div id="swagger-ui"></div>
+              <script>
+              window.onload =function() {
+                const ui = SwaggerUIBundle({
+                  url: "http://35.241.162.109/v2/api-docs?group=Singapur%20client-api",
+                  dom_id: '#swagger-ui',
+                  swagger: "2.0", 
+                  presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset
+                  ]
+                })
+
+                window.ui = ui
+              }
+              </script>
+              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                  <i class="fa fa-close"></i>
+                  Close</a>
     </div>
   </div>
 
@@ -322,9 +322,7 @@
           <div class="col-lg-8 mx-auto">
             <h2 class="text-secondary text-uppercase mb-0">Professional</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="img/portfolio/dyer.png" alt="">
-          </br>
-            <img src="img/portfolio/professional.png" >
+  
             <p>The Professional API gives the information identifying the Professional, based on the details provided by the Professional and the Platform. 
               Those one give by the Professional:
               <ol type="a">
@@ -339,12 +337,15 @@
               Once the Professional is registered, the API Professional manages the login credentials for the Professional (user, password).
               The microservice deals with the different status (change, recover,..) The Professional has access to their Jobs published in their private space. 
               </p>
+            </br>
+              <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+              <img src="img/portfolio/professional.png" >
             <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
               <i class="fa fa-close"></i>
-              Swagger</a>
+              Api Definition</a>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Cerrar</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -362,8 +363,8 @@
           <div class="col-lg-8 mx-auto">
             <h2 class="text-secondary text-uppercase mb-0">Client</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="img/portfolio/familia.png" alt="">
-            <img src="img/portfolio/client.png" >
+            
+            
             <p>The Client API provides the information identifying the Client, based on the information provided by him in 2 different steps:
                 <ol type="a">
                     <dt>"Light Register":</dt>
@@ -376,12 +377,15 @@
                The microservice deals with different status (change, recover).
                The Clients has access to their Jobs published in their private space.
               </p>
+            </br>
+            <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+              <img src="img/portfolio/client.png" >
             <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
               <i class="fa fa-close"></i>
-              Swagger</a>
+              Api Definition</a>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Cerrar</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -399,20 +403,23 @@
           <div class="col-lg-8 mx-auto">
             <h2 class="text-secondary text-uppercase mb-0">Request Service</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="img/portfolio/signo-de-interrogacion.png" alt="">
-            <img src="img/portfolio/request.png" >
+            
+            
             <p>The Request API provides the informations related to the exchanges between the Client and the Professional in the Chat.
               These exchanges start at the moment that the Client and Professional start a new convertation in the Chat,
                until they agree to open a Job, or unlike they finish the exchanges.
                All the exchanges are stored.
                In this microservice the Client and the Professional agree on the details of the future Job: service, price, place, date (day & hour)
               </p>
+            </br>
+            <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+              <img src="img/portfolio/request.png" >
             <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
               <i class="fa fa-close"></i>
-              Swagger</a>
+              Api Definition</a>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Cerrar</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -430,19 +437,21 @@
           <div class="col-lg-8 mx-auto">
             <h2 class="text-secondary text-uppercase mb-0">Notification</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="img/portfolio/email.png" >
-            <img src="img/portfolio/notification.png" >
+
             <p>The API Notification provides the information about the communications with the Client and the Professional.
               The communications will be done by mail and by SMS for the Client and the Professional, and also messages Push to the Professional.
               The communications include the messages generated by the loging processes, the messages generated in the chat, the Charges received by the PSP,
                the Payments sent by the PSP, the Invoices and the ratings.
               </p>
+            </br>
+            <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+              <img src="img/portfolio/notification.png" >
             <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
               <i class="fa fa-close"></i>
-              Swagger</a>
+              Api Definition</a>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Cerrar</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -460,16 +469,17 @@
           <div class="col-lg-8 mx-auto">
             <h2 class="text-secondary text-uppercase mb-0">Identity Server</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="img/portfolio/contrasena.png" alt="">
-            <img src="img/portfolio/user.png" >
             <p>The Identity Server API deals with the permissions logic to the API conexions.
                 It manages the credentials, tokens, permissions and roles, needed to allow the access to the APIs and the users.</p>
+            </br>
+            <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+            <img src="img/portfolio/user.png" >
             <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
               <i class="fa fa-close"></i>
-              Swagger</a>
+              Api Definition</a>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Cerrar</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -487,8 +497,7 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">Service Offer</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/rodillo-de-pintura.png" alt="">
-              <img src="img/portfolio/offered_service.png" >
+
               <p >The Services Offer API provides the structured offer of services provided by Singapur. 
                 The Offer is structured in 3 levels:
                 <ol type="a">
@@ -503,12 +512,15 @@
                      In a second phase, an intelligent mechanism (could be a machine learning artifact), will be implemented to match the differences and
                       classify properly the "Others" likewise. 
                 </p>
+              </br>
+              <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+                <img src="img/portfolio/offered_service.png" >
               <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
                 <i class="fa fa-close"></i>
-                Swagger</a>
+                Api Definition</a>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Cerrar</a>
+                Close</a>
             </div>
           </div>
         </div>
@@ -526,25 +538,27 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">Operation </h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/llave-inglesa.png" >
-              <img src="img/portfolio/operation.png" >
+         
               <p >The Operation API provides the Job details.
                  Once the Client has agreed with the Professional on the Service to be done, the price, the place, the date (day and hour),
                  a Job is created for the Client and the Professional, using the precedent variables.
                  At this moment a first Charge will be done to the Client. 
                  As the Job progress, more variables are created: checking the Professional arrival (day & hour) ; picture “before”; final date (day & hour);
-                     picture “after”; final price; Professional closing the Job; Client confirming (OK / KO) ; detail of services done; 
+                 picture “after”; final price; Professional closing the Job; Client confirming (OK / KO) ; detail of services done; 
                      detail of products included.
                      
                   The Operation API gives a unique register for the Job created from the moment when the Client and the Professional agreed on a Job.
                   During the Job execution additional Services and Products can be added.
                 </p>
+              </br>
+              <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+                <img src="img/portfolio/operation.png" >
               <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
                 <i class="fa fa-close"></i>
-                Swagger</a>
+                Api Definition</a>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Cerrar</a>
+                Close</a>
             </div>
           </div>
         </div>
@@ -562,8 +576,8 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">Payment</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/dinero.png" alt="">
-              <img src="img/portfolio/payment.png" >
+              
+              
               <p>The API Payment provides information about the Charges and Payments.
                 The Charges flows are sent from the Client to the PSP, and the Payments flows came from the PSP to the Professional.
                 The PSP includes the flows sent to the escrow accounts. The Charges are split in 3 amounts:
@@ -574,62 +588,15 @@
                 </ol> 
                 The Payment is calculated taking out the commissions and taxes from the Charges, and the PSP commission is assumed by the Platform.
                 </p>
+              </br>
+              <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+                <img src="img/portfolio/payment.png" >
               <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
                 <i class="fa fa-close"></i>
-                Swagger</a>
+                Api Definition</a>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Cerrar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-           <!-- Portfolio Modal 10 -->
-  <div class="portfolio-modal mfp-hide" id="portfolio-modal-10">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0"> Discovery Server</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/mapa.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
-                <i class="fa fa-close"></i>
-                Swagger</a>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Cerrar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Portfolio Modal  11-->
-  <div class="portfolio-modal mfp-hide" id="portfolio-modal-11">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0"> Configuration server </h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/ajustes.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
-                <i class="fa fa-close"></i>
-                Swagger</a>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Cerrar</a>
+                Close</a>
             </div>
           </div>
         </div>
@@ -647,24 +614,25 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0"> Rating </h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cono-de-trafico.png" alt="">
+              
               <p>The API Rating provides the information that the Client done to the Professional, and the one done by the Professional to the Client.
                  The Professional rating is public. Unlikewise, the Client rating will be kept for internal use of the Platform. 
                  The rating will be performed using different indicators (cleaning, punctuality,...)
                 </p>
+              </br>
+              <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+            </br>
               <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
                 <i class="fa fa-close"></i>
-                Swagger</a>
+                Api Definition</a>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Cerrar</a>
+                Close</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
 
     <!-- Portfolio Modal  13-->
   <div class="portfolio-modal mfp-hide" id="portfolio-modal-13">
@@ -677,16 +645,19 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0"> Chat </h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cono-de-trafico.png" alt="">
+              
               <p>The Chat API has the whole capacities to manage the information contained in the exchanges between the Client and the Professional.
                 It can read the conversations, allow the Customer Service can enter in the Chat, managing the pending conversations, extract information from the database.
               </p>
+            </br>
+            <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+          </br>
               <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
                 <i class="fa fa-close"></i>
-                Swagger</a>
+                Api Definition</a>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Cerrar</a>
+                Close</a>
             </div>
           </div>
         </div>
@@ -704,7 +675,7 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0"> Invoices </h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cono-de-trafico.png" alt="">
+              
               <p>The Invoices API interacts with the microservice Invoice generator.
                 The Invoices are created with the Client and Professional fiscal informations, the Job details (services, products, prices, taxes).
                 The microservice will send the forms to the Client, to the Customer, and externally to the LM main comptable module.
@@ -715,12 +686,15 @@
                 </ol>
                 The invoices must be stored on line at least for 4 years after the date of service. 
               </p>
+            </br>
+            <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+          </br>
               <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
                 <i class="fa fa-close"></i>
-                Swagger</a>
+                Api Definition</a>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Cerrar</a>
+                Close</a>
             </div>
           </div>
         </div>
@@ -738,18 +712,21 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">Functional Adminsitration </h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/cono-de-trafico.png" alt="">
+              
               <p>The API Functional Administration provides a set of back office functionalities.
                 The main features are the following manages the Professional curation process; manages the Customer Service; 
                 provides information about the Job, the status and the incidents declared by the Client or the Professional.
                 The API FA also allow to expel Professionals, change the service status in case of error and generate request with filters.
               </p>
+            </br>
+            <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+          </br>
               <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
                 <i class="fa fa-close"></i>
-                Swagger</a>
+                Api Definition</a>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Cerrar</a>
+                Close</a>
             </div>
           </div>
         </div>
@@ -768,7 +745,7 @@
               <p class="mb-5"></p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>
-                Cerrar</a>
+                Close</a>
           </div>
         </div>
       </div>
