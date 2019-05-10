@@ -12,10 +12,11 @@
      font-family:Montserrat
     }
 
-h6{
-    margin-top: 10px;
-    text-align: center;
-}
+
+    h6{
+        color: #74C660;
+        text-align: center;
+    }
 
  hr.star-dark,hr.star-light{
      max-width:15rem;
@@ -40,7 +41,8 @@ h6{
      border-color:#fff
     }
  hr.star-light:after{
-     color:#fff;background-color:#74C660
+     color:#fff;
+     background-color:#74C660
     }
  hr.star-dark{
      border-color:#2c3e50
@@ -63,9 +65,17 @@ h6{
  .scroll-to-top{
      z-index:1042;right:1rem;bottom:1rem;display:none
     }
- .scroll-to-top a{width:3.5rem;height:3.5rem;background-color:rgba(33,37,41,.5);line-height:3.1rem}
+ .scroll-to-top a{
+     width:3.5rem;
+     height:3.5rem;
+     background-color:rgba(33,37,41,.5);
+     line-height:3.1rem
+    }
  #mainNav{
-     padding-top:1rem;padding-bottom:1rem;font-weight:700;font-family:Montserrat
+     padding-top:1rem;
+     padding-bottom:1rem;
+     font-weight:700;
+     font-family:Montserrat
     }
  #mainNav .navbar-brand{
      color:#fff}
@@ -84,7 +94,9 @@ h6{
  @media (min-width:992px){
      #mainNav{padding-top:1.5rem;padding-bottom:1.5rem;-webkit-transition:padding-top .3s,padding-bottom .3s;transition:padding-top .3s,padding-bottom .3s
     }
- #mainNav .navbar-brand{font-size:2em;-webkit-transition:font-size .3s;transition:font-size .3s}
+ #mainNav .navbar-brand{
+     font-size:2em;-webkit-transition:font-size .3s;transition:font-size .3s
+    }
  #mainNav .navbar-nav{margin-top:0}
  #mainNav .navbar-nav>li.nav-item>a.nav-link.active{color:#fff;
     background:#74C660
@@ -119,7 +131,8 @@ h6{
     display:block;
     max-width:25rem;
     width: 150px;
-    margin-bottom:15px
+    padding-bottom: 0px!important;
+    
     }
  .portfolio .portfolio-item .portfolio-item-caption{
      -webkit-transition:all ease .5s;
@@ -128,14 +141,13 @@ h6{
      background-color: rgba(49, 180, 4, 1)
     }
  .portfolio .portfolio-item .portfolio-item-caption:hover{
-     opacity:1
+     opacity:0.9
     }
 .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content{
         font-size:1.5rem
     }
  @media (min-width:576px){
      .portfolio{margin-bottom:-30px}
-     .portfolio .portfolio-item{margin-bottom:30px}
     }
  .portfolio-modal .portfolio-modal-dialog{
      padding:3rem 1rem;
@@ -154,6 +166,9 @@ h6{
  .portfolio-modal .portfolio-modal-dialog .close-button i{
      line-height:38px
     }
+.close-button:hover{
+    color: #31B404;
+}
  .portfolio-modal .portfolio-modal-dialog h2{
      font-size:2rem
     }
@@ -167,7 +182,10 @@ h6{
      font-size:3rem
     }
 }
- .floating-label-form-group{position:relative;border-bottom:1px solid #e9ecef}
+ .floating-label-form-group{
+     position:relative;
+     border-bottom:1px solid #e9ecef
+    }
  .floating-label-form-group input,.floating-label-form-group textarea{
      font-size:1.5em;
      position:relative;
@@ -200,7 +218,8 @@ h6{
      border-left:1px solid #e9ecef
     }
  .floating-label-form-group-with-value label{
-     top:0;opacity:1
+     top:0;
+     opacity:1
     }
  .floating-label-form-group-with-focus label{
      color:#74C660
@@ -220,7 +239,7 @@ h6{
  a{
     color:#74C660
  }
- a:active,a:focus,a:hover{
+ .portfolio-modal.row a:active, .portfolio-modal.row a:focus, .portfolio-modal.row a:hover{
      color:#fff;
     }
  .btn{
@@ -267,4 +286,5 @@ h6{
  #text li{
     margin-bottom: 4px;
 }
+
 
