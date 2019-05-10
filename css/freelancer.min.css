@@ -287,4 +287,6 @@
     margin-bottom: 4px;
 }
 
-
+.block, .col-12{
+    padding: 0px;
+}
