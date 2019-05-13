@@ -293,3 +293,11 @@
 .models {
     padding: 10px;
 }
+
+.response-col_status{
+    width: 20px;
+}
+
+.parameters-col_name{
+    width: 175px;
+}
