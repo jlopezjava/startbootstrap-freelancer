@@ -83,6 +83,87 @@
     })
     var swagger = document.getElementById('swagger-ui3');
     swagger.style.display='none';
+  
+
+  const ui4 = SwaggerUIBundle({
+      url: "http://35.241.162.109/v2/api-docs?group=Singapur%20client-api",
+      dom_id: '#swagger-ui4',
+      docExpansion: 'none',
+      swagger: "2.0", 
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ]
+    })
+    var swagger = document.getElementById('swagger-ui4');
+    swagger.style.display='none';
+
+
+    const ui5 = SwaggerUIBundle({
+      url: "http://35.241.162.109/v2/api-docs?group=Singapur%20client-api",
+      dom_id: '#swagger-ui5',
+      docExpansion: 'none',
+      swagger: "2.0", 
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ]
+    })
+    var swagger = document.getElementById('swagger-ui5');
+    swagger.style.display='none';
+
+    const ui6 = SwaggerUIBundle({
+      url: "http://35.241.162.109/v2/api-docs?group=Singapur%20client-api",
+      dom_id: '#swagger-ui6',
+      docExpansion: 'none',
+      swagger: "2.0", 
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ]
+    })
+    var swagger = document.getElementById('swagger-ui6');
+    swagger.style.display='none';
+
+    const ui7 = SwaggerUIBundle({
+      url: "http://35.241.162.109/v2/api-docs?group=Singapur%20client-api",
+      dom_id: '#swagger-ui7',
+      docExpansion: 'none',
+      swagger: "2.0", 
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ]
+    })
+    var swagger = document.getElementById('swagger-ui7');
+    swagger.style.display='none';
+
+    const ui8 = SwaggerUIBundle({
+      url: "http://35.241.162.109/v2/api-docs?group=Singapur%20client-api",
+      dom_id: '#swagger-ui8',
+      docExpansion: 'none',
+      swagger: "2.0", 
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ]
+    })
+    var swagger = document.getElementById('swagger-ui8');
+    swagger.style.display='none';
+
+    const ui9 = SwaggerUIBundle({
+      url: "http://35.241.162.109/v2/api-docs?group=Singapur%20client-api",
+      dom_id: '#swagger-ui9',
+      docExpansion: 'none',
+      swagger: "2.0", 
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ]
+    })
+    var swagger = document.getElementById('swagger-ui9');
+    swagger.style.display='none';
+  
   }
   </script>
 
@@ -463,7 +544,7 @@
             <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
               <img src="img/portfolio/request.png" >
             </br></br>
-            <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
+            <a class="swagger btn btn-primary btn-lg rounded-pill" href="#" onclick="show(document.getElementById('swagger-ui4'))">
               <i class="fa fa-close"></i>
               Api Definition</a>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
@@ -472,6 +553,7 @@
           </div>
         </div>
       </div>
+      <div id="swagger-ui4"></div>
     </div>
   </div>
 
@@ -498,7 +580,7 @@
           </br>
               <img src="img/portfolio/notification.png" >
             </br></br>
-            <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
+            <a class="swagger btn btn-primary btn-lg rounded-pill" href="#" onclick="show(document.getElementById('swagger-ui5'))" >
               <i class="fa fa-close"></i>
               Api Definition</a>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
@@ -507,6 +589,7 @@
           </div>
         </div>
       </div>
+      <div id="swagger-ui5"></div>
     </div>
   </div>
 
@@ -529,7 +612,7 @@
             <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
             <img src="img/portfolio/user.png" >
           </br></br>
-            <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
+            <a class="swagger btn btn-primary btn-lg rounded-pill" href="#" onclick="show(document.getElementById('swagger-ui6'))">
               <i class="fa fa-close"></i>
               Api Definition</a>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
@@ -538,6 +621,7 @@
           </div>
         </div>
       </div>
+      <div id="swagger-ui6"></div>
     </div>
   </div>
 
@@ -572,15 +656,16 @@
               <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
                 <img src="img/portfolio/offered_service.png" >
               </br></br>
-              <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
+              <a class="swagger btn btn-primary btn-lg rounded-pill" href="#" >
                 <i class="fa fa-close"></i>
                 Api Definition</a>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#" onclick="show(document.getElementById('swagger-ui7'))">
                 <i class="fa fa-close"></i>
                 Close</a>
             </div>
           </div>
         </div>
+        <div id="swagger-ui7"></div>
       </div>
     </div>
 
@@ -611,7 +696,7 @@
               <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
                 <img src="img/portfolio/operation.png" >
               </br></br>
-              <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
+              <a class="swagger btn btn-primary btn-lg rounded-pill" href="#" onclick="show(document.getElementById('swagger-ui8'))">
                 <i class="fa fa-close"></i>
                 Api Definition</a>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
@@ -620,6 +705,7 @@
             </div>
           </div>
         </div>
+        <div id="swagger-ui8"></div>
       </div>
     </div>
 
@@ -650,15 +736,16 @@
               <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
                 <img src="img/portfolio/payment.png" >
               </br></br>
-              <a class="swagger btn btn-primary btn-lg rounded-pill" href="http://35.241.162.109/swagger-ui.html#/">
+              <a class="swagger btn btn-primary btn-lg rounded-pill" href="#">
                 <i class="fa fa-close"></i>
                 Api Definition</a>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#" onclick="show(document.getElementById('swagger-ui9'))">
                 <i class="fa fa-close"></i>
                 Close</a>
             </div>
           </div>
         </div>
+        <div id="swagger-ui9"></div>
       </div>
     </div>
 
