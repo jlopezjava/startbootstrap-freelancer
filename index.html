@@ -151,6 +151,19 @@
     var swagger = document.getElementById('swagger-ui8');
     swagger.style.display='none';
 
+	const ui11 = SwaggerUIBundle({
+      url: "http://34.76.40.179/v2/api-docs?group=singapur%20chat%20server",
+      dom_id: '#swagger-ui11',
+      docExpansion: 'none',
+      swagger: "2.0", 
+      presets: [
+        SwaggerUIBundle.presets.apis,
+        SwaggerUIStandalonePreset
+      ]
+    })
+    var swagger = document.getElementById('swagger-ui11');
+    swagger.style.display='none';
+	
     const ui9 = SwaggerUIBundle({
       url: "http://34.76.221.198//v2/api-docs?group=singapur%20payment%20server",
       dom_id: '#swagger-ui9',
@@ -325,10 +338,10 @@
                       <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-13">
                         <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
                           <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                              <i>Under Construction</i>
+             
                           </div>
                         </div>
-                        <img class="img-fluid" src="img/portfolio/cono-de-trafico.png" alt="">
+                        <img class="img-fluid" src="img/portfolio/chat.png" alt="">
                         </a>
                       <h6>Chat</h6>
                     </div>
@@ -795,17 +808,20 @@
                 It can read the conversations, allow the Customer Service can enter in the Chat, managing the pending conversations, extract information from the database.
               </p>
             </br>
-            <h3 class="text-secondary text-uppercase mb-0">Data Base Model</h3>
+           
           </br>
           </div>
+              <a class="swagger btn btn-primary btn-lg rounded-pill" href="#">
                 <i class="fa fa-close"></i>
-                <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
+                Api Definition</a>
+              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#" onclick="show(document.getElementById('swagger-ui11'))">
                 <i class="fa fa-close"></i>
                 Close</a>
             </div>
           </div>
-        </div>
-      </div>
+		  </div>
+		<div id="swagger-ui11"></div>
+	</div>
     </div>
 
      <!-- Portfolio Modal  14-->
